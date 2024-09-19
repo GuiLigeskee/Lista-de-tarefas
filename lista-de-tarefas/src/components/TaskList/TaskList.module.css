@@ -26,12 +26,14 @@
   font-size: 18px;
   font-weight: 500;
   color: #a47cf3;
+  text-align: left;
 }
 
 .details p {
   margin: 4px 0 0;
   color: #bbb;
   font-size: 14px;
+  text-align: left;
 }
 
 .actions {
