@@ -45,6 +45,7 @@ const TaskForm = ({
 
       setTaskList!([...taskList, newTask]);
 
+      // Limpar os valores após adicionar a tarefa
       setTitle("");
       setDifficulty(0);
     }
@@ -53,7 +54,7 @@ const TaskForm = ({
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.name === "title") {
       setTitle(e.target.value);
-    } else {
+    } else if (e.target.name === "difficulty") {
       setDifficulty(parseInt(e.target.value));
     }
   };
@@ -61,28 +62,53 @@ const TaskForm = ({
   return (
     <form onSubmit={addTaskHandler} className={styles.form}>
       <div className={styles.input_container}>
-        <label htmlFor="title">Título:</label>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          placeholder="Título da tarefa"
-          onChange={handleChange}
-          value={title}
-        />
+        <div className={styles.container}>
+          <input
+            required
+            type="text"
+            className={styles.input}
+            name="title"
+            id="title"
+            onChange={handleChange}
+            value={title} // valor controlado
+          />
+          <label className={styles.label} htmlFor="title">
+            Nome da tarefa
+          </label>
+        </div>
       </div>
       <div className={styles.input_container}>
-        <label htmlFor="difficulty">Dificuldade:</label>
-        <input
-          type="text"
-          name="difficulty"
-          id="difficulty"
-          placeholder="Dificuldade da tarefa"
-          onChange={handleChange}
-          value={difficulty}
-        />
+        <div className={styles.container}>
+          <input
+            required
+            type="number"
+            className={styles.input}
+            name="difficulty"
+            id="difficulty"
+            onChange={handleChange}
+            value={difficulty === 0 ? "" : difficulty} // Limpar o input após o envio
+          />
+          <label className={styles.label} htmlFor="difficulty">
+            Dificuldade da tarefa
+          </label>
+        </div>
       </div>
-      <input type="submit" value={btnText} />
+      {/* <button type="submit">{btnText}</button> */}
+      <button className={styles.btn}>
+        <svg
+          height="24"
+          width="24"
+          fill="#FFFFFF"
+          viewBox="0 0 24 24"
+          data-name="Layer 1"
+          id="Layer_1"
+          className={styles.sparkle}
+        >
+          <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+        </svg>
+
+        <span className={styles.text}>{btnText}</span>
+      </button>
     </form>
   );
 };

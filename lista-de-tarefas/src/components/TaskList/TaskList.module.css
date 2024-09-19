@@ -1,38 +1,59 @@
 .task {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  border-radius: 50px; /* Bordas arredondadas semelhantes aos inputs */
+  padding: 16px;
+  margin: 10px 0;
+  width: 370px;
+  height: 70px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4); /* Sombra semelhante aos inputs */
+  transition: 0.3s;
+  position: relative;
+  color: #fff;
+  margin: 1em auto;
   max-width: 400px;
-  margin: 0 auto;
-  border-bottom: 1px solid #ccc;
-  padding: 1em;
 }
 
-.details {
-  text-align: left;
+.task:hover {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4), inset 3px 3px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4); /* Efeito de foco similar */
 }
 
 .details h4 {
-  font-size: 1.2em;
-  margin-bottom: 1em;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #a47cf3;
+}
+
+.details p {
+  margin: 4px 0 0;
+  color: #bbb;
+  font-size: 14px;
 }
 
 .actions {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 12px;
 }
 
 .actions i {
-  margin-bottom: 0.5em;
-  font-size: 1.2em;
+  font-size: 20px;
+  color: #888;
   cursor: pointer;
-  background-color: #282c34;
-  color: #fff;
-  padding: 0.4em;
-  transition: 0.5s;
+  transition: color 0.3s ease;
 }
 
 .actions i:hover {
-  color: #3cb803;
+  color: #a47cf3;
+}
+
+.no-tasks {
+  text-align: center;
+  color: #aaa;
+  font-size: 16px;
 }

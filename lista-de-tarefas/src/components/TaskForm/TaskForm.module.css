@@ -2,36 +2,104 @@
   display: flex;
   flex-direction: column;
   max-width: 400px;
+  margin: 2em auto;
+  color: #3c3c3c;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  position: relative;
+  color: white;
+  max-width: 400px;
+}
+
+.container .label {
+  font-size: 15px;
+  padding-left: 10px;
+  position: absolute;
+  top: 13px;
+  transition: 0.3s;
+  pointer-events: none;
+  color: #aaaaaa;
+}
+
+.input {
+  height: 45px;
+  border: none;
+  outline: none;
+  padding: 0px 7px;
+  border-radius: 25px;
+  color: #aaaaaa;
+  font-size: 15px;
+  background-color: transparent;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+  margin-bottom: 2em;
+}
+
+.input:focus {
+  border: 2px solid transparent;
+  color: #aaaaaa;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4), inset 3px 3px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.container .input:valid ~ .label,
+.container .input:focus ~ .label {
+  transition: 0.3s;
+  padding-left: 2px;
+  transform: translateY(-35px);
+}
+
+.container .input:valid,
+.container .input:focus {
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4), inset 3px 3px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+/* From Uiverse.io by AlimurtuzaCodes */
+.btn {
+  border: none;
+  padding: 1em 2em;
+  border-radius: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #1c1a1c;
+  cursor: pointer;
+  transition: all 450ms ease-in-out;
   margin: 0 auto;
 }
 
-.form input {
-  padding: 8px 15px;
-  margin-bottom: 1.5em;
-  border-radius: 0;
-  border: 1px solid #282c34;
+.sparkle {
+  fill: #aaaaaa;
+  transition: all 800ms ease;
 }
 
-.form input[type="submit"] {
-  background-color: #3cb803;
-  border: 1px solid #3cb803;
-  color: #000;
-  transition: 0.5s;
-  cursor: pointer;
+.text {
+  font-weight: 600;
+  color: #aaaaaa;
+  font-size: medium;
 }
 
-.form input[type="submit"]:hover {
-  background-color: #fff;
-  border-color: #282c34;
+.btn:hover {
+  background: linear-gradient(0deg, #a47cf3, #683fea);
+  box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+    inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 0px 4px rgba(255, 255, 255, 0.2), 0px 0px 180px 0px #9917ff;
+  transform: translateY(-2px);
 }
 
-.input_container {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
+.btn:hover .text {
+  color: white;
 }
 
-.input_container label {
-  font-weight: bold;
-  margin-bottom: 0.4em;
+.btn:hover .sparkle {
+  fill: white;
+  transform: scale(1.2);
 }
