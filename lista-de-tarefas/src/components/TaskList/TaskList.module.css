@@ -5,8 +5,6 @@
   background-color: transparent;
   border-radius: 50px; /* Bordas arredondadas semelhantes aos inputs */
   padding: 16px;
-  margin: 10px 0;
-  width: 370px;
   height: 70px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
     -1px -1px 6px rgba(255, 255, 255, 0.4); /* Sombra semelhante aos inputs */
